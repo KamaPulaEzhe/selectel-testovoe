@@ -1,0 +1,10 @@
+version: "2"
+linters:
+  enable:
+    - mylinter
+  settings:
+    custom:
+      mylinter:
+        type: plugin
+        path: /Users/kamilhismatullin/go/src/github.com/selectel/mylinter.so
+        description: "Линтер для проверки логов"
