@@ -1,0 +1,7 @@
+level=info msg="golangci-lint has version 2.9.0 built with go1.26.0 from 72798d3 on 2026-02-10T23:06:57Z"
+level=info msg="[config_reader] Config search paths: [./ /Users/kamilhismatullin/go/src/github.com/selectel/examples/bad /Users/kamilhismatullin/go/src/github.com/selectel/examples /Users/kamilhismatullin/go/src/github.com/selectel /Users/kamilhismatullin/go/src/github.com /Users/kamilhismatullin/go/src /Users/kamilhismatullin/go /Users/kamilhismatullin /Users /]"
+level=info msg="[config_reader] Used config file .golangci.yml"
+level=info msg="[config_reader] Module name \"github.com/selectel\""
+level=info msg="Loaded github.com/selectel/cmd/mylinter: mylinter"
+Error: build linters: plugin(mylinter): plugin "mylinter" not found
+The command is terminated due to an error: build linters: plugin(mylinter): plugin "mylinter" not found
