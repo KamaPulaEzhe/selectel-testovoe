@@ -120,14 +120,12 @@ make all      # полная сборка и проверка
 
 ## 🔌 Интеграция с golangci-lint
 
-### Вариант 1: как плагин
-
-1. Соберите плагин:
+1. Сборка плагина:
 ```bash
 go build -buildmode=plugin -o mylinter.so ./cmd/mylinter
 ```
 
-2. Создайте файл `.golangci.yml` в корне вашего проекта:
+2. `.golangci.yml`
 ```yaml
 version: "2"
 linters:
@@ -141,50 +139,11 @@ linters:
         description: "Линтер для проверки логов"
 ```
 
-3. Запустите:
+3. Запуск:
 ```bash
 golangci-lint run
 ```
 
-### Вариант 2: как модуль (рекомендуется)
-
-1. Убедитесь, что в `cmd/mylinter` есть функция `AnalyzerPlugin`, экспортирующая анализатор:
-```go
-package main
-
-import (
-    "github.com/yourusername/logger-linter/pkg/analyzer"
-    "golang.org/x/tools/go/analysis"
-)
-
-func AnalyzerPlugin() []*analysis.Analyzer {
-    return []*analysis.Analyzer{analyzer.Analyzer}
-}
-```
-
-2. Добавьте replace в `go.mod` вашего проекта:
-```
-replace github.com/yourusername/logger-linter/cmd/mylinter => /путь/к/logger-linter/cmd/mylinter
-```
-
-3. Создайте `.golangci.yml`:
-```yaml
-version: "2"
-linters:
-  enable:
-    - mylinter
-  settings:
-    custom:
-      mylinter:
-        type: module
-        path: github.com/yourusername/logger-linter/cmd/mylinter
-        description: "Линтер для проверки логов"
-```
-
-4. Запустите:
-```bash
-golangci-lint run
-```
 
 ## 📝 Примеры использования
 
