@@ -6,15 +6,6 @@
 
 Статический анализатор для Go-кода, который проверяет лог-сообщения на соответствие правилам форматирования и безопасности. Интегрируется с `go vet` и `golangci-lint`.
 
-## 📦 Репозиторий
-
-Проект доступен на GitHub: [https://github.com/yourusername/logger-linter](https://github.com/yourusername/logger-linter)
-
-```bash
-git clone https://github.com/yourusername/logger-linter.git
-cd logger-linter
-```
-
 ## 📋 Правила проверки
 
 ### 1. Строчная буква в начале
